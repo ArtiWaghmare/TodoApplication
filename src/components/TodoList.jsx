@@ -103,6 +103,7 @@ function TodoList() {
       <div className="add-task">
         <input
           type="text"
+          className='placeholder'
           placeholder="Enter new task"
           value={newTaskText}
           onChange={(e) => setNewTaskText(e.target.value)}

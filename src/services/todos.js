@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 export const fetchTodos = async () => {
@@ -7,7 +6,7 @@ export const fetchTodos = async () => {
     return response.data.map(todo => ({
       id: todo.id,
       text: todo.title,
-      completed: false
+      completed: todo.completed  
     }));
   } catch (error) {
     console.error('Error fetching todos:', error);
