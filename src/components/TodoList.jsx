@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faEdit,faCheck  } from '@fortawesome/free-solid-svg-icons';
+
 import './TodoList.css';
 import { fetchTodos } from '../services/todos';
 
@@ -133,11 +136,15 @@ function TodoList() {
             )}
             <div>
               {editMode === todo.id ? (
-                <button onClick={() => handleUpdate(todo.id, editedTaskText)} >Save</button>
+                <button onClick={() => handleUpdate(todo.id, editedTaskText)} > <FontAwesomeIcon icon={faCheck} /></button>
+               
               ) : (
-                <button onClick={() => handleEdit(todo.id, todo.text)} style={{ backgroundColor: 'blue', color: 'white' }}>Edit</button>
+                  <button onClick={() => handleEdit(todo.id, todo.text)} style={{ backgroundColor: 'blue', color: 'white' }}>   <FontAwesomeIcon icon={faEdit} /></button>
+               
+
               )}
-              <button onClick={() => deleteTask(todo.id)}>Delete</button>
+              <button onClick={() => deleteTask(todo.id)}>  <FontAwesomeIcon icon={faTrash} /></button>
+            
             </div>
           </li>
         ))}
